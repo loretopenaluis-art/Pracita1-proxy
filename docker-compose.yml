@@ -1,0 +1,13 @@
+services:
+  Apache:
+    image: ubuntu/apache2:latest
+    container_name: marcas
+
+    ports: 
+      - "3400:80"
+
+    volumes:
+      - ./html:/var/www/html
+      - ./virtualhosts:/etc/apache2/sites-available/
+
+    restart: unless-stopped
